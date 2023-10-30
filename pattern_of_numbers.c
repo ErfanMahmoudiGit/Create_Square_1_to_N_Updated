@@ -16,11 +16,23 @@ void print_rows(int vertical, int horizontal, int entered_number)
     }
     else
     {
+
         for (horizontal=2; horizontal<=entered_number; horizontal++)
-            printf ("  ");
+        {
+            if (vertical == horizontal)
+                printf ("%d ", horizontal);
+            else
+                printf ("  ");
+        }
+            
         // we print the second part of the row so we start from entered_number-1:
         for (horizontal=entered_number-1; horizontal>1; horizontal--)
-            printf ("  ");
+        {
+            if (vertical == horizontal)
+                printf ("%d ", horizontal);
+            else
+                printf ("  ");
+        }
     }
     // then we print the last element of the rows:
     printf ("%d ", vertical);
@@ -41,17 +53,3 @@ int main()
         print_rows(vertical, horizontal, entered_number);
     return 0;
 }
-/*
-            }
-            else if (vertical==horizontal)
-            {
-                    printf ("%d ", horizontal);
-            }
-            else if (vertical+((2*n)-4)-e==horizontal)
-                {
-                printf ("%d ", horizontal-((2*n)-4)+e);
-                e+=2;
-                }
-            else
-                printf ("  ");
-            }*/
