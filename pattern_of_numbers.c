@@ -6,33 +6,24 @@ void print_rows(int vertical, int horizontal, int entered_number)
     // we print the first element of the rows:
     printf ("%d ", vertical);
     // we print the first part of the row:
-    if (vertical == 1 || vertical == 2*entered_number-1)
+    for (horizontal=2; horizontal<=entered_number; horizontal++)
     {
-        for (horizontal=2; horizontal<=entered_number; horizontal++)
+        // if we are on the diameter or on the first row or on the last row, we should print the numbers.
+        if (vertical == horizontal || vertical == 1 || vertical == 2*entered_number-1)
             printf ("%d ", horizontal);
-        // we print the second part of the row so we start from entered_number-1:
-        for (horizontal=entered_number-1; horizontal>1; horizontal--)
-            printf ("%d ", horizontal);
+        // if not we should print empty space
+        else
+            printf ("  ");
     }
-    else
+    // we print the second part of the row so we start from entered_number-1:
+    for (horizontal=entered_number-1; horizontal>1; horizontal--)
     {
-
-        for (horizontal=2; horizontal<=entered_number; horizontal++)
-        {
-            if (vertical == horizontal)
-                printf ("%d ", horizontal);
-            else
-                printf ("  ");
-        }
-            
-        // we print the second part of the row so we start from entered_number-1:
-        for (horizontal=entered_number-1; horizontal>1; horizontal--)
-        {
-            if (vertical == horizontal)
-                printf ("%d ", horizontal);
-            else
-                printf ("  ");
-        }
+        // if we are on the diameter or on the first row or on the last row, we should print the numbers.
+        if (vertical == horizontal || vertical == 1 || vertical == 2*entered_number-1)
+            printf ("%d ", horizontal);
+        // if not we should print empty space
+        else
+            printf ("  ");
     }
     // then we print the last element of the rows:
     printf ("%d ", vertical);
